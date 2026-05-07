@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.Tec Servicios - Tecnología con respaldo real</title>
+    
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <meta property="og:title" content="G.Tec Servicios - Tecnología de Punta">
+    <meta property="og:description" content="Empresa de Tecnología con más de 35 años en el rubro. Hardware, Servicios y Software propio.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://gtecservicios.com.ar/">
+
+    <style>
+        :root {
+            --azul-oscuro: #0a192f;
+            --azul-fondo: #050d1a;
+            --cian-neon: #00f2ff;
+            --naranja-neon: #ff9d00;
+            --blanco: #ffffff;
+            --gris-texto: #a8b2c1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--azul-fondo);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--blanco);
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background-color: var(--azul-oscuro);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+        }
+
+        .logo-principal {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.3));
+        }
+
+        .hero h1 {
+            color: var(--cian-neon);
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+            line-height: 1.1;
+            margin-top: 0;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+
+        .texto-destacado {
+            color: var(--naranja-neon);
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .botones-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-whatsapp-principal {
+            background-color: var(--cian-neon);
+            color: var(--azul-oscuro);
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-catalogo {
+            background-color: transparent;
+            color: var(--cian-neon);
+            border: 2px solid var(--cian-neon);
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp-principal:hover, .btn-catalogo:hover {
+            transform: scale(1.05);
+            background-color: var(--cian-neon);
+            color: var(--azul-oscuro);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
+        }
+
+        .seccion-oferta {
+            padding: 60px 20px;
+            background-color: #071224;
+            border-bottom: 1px solid rgba(255, 157, 0, 0.2);
+        }
+
+        .card-oferta {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--azul-oscuro);
+            border: 2px solid var(--naranja-neon);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 157, 0, 0.2);
+            position: relative;
+        }
+
+        .badge-oferta {
+            background-color: var(--naranja-neon);
+            color: var(--azul-oscuro);
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 30px;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.1rem;
+            box-shadow: 0 0 15px rgba(255, 157, 0, 0.5);
+        }
+
+        .card-oferta h3 {
+            color: var(--blanco);
+            font-size: 2rem;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .precio-oferta {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--naranja-neon);
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(255, 157, 0, 0.3);
+        }
+
+        .precio-oferta span {
+            font-size: 1.3rem;
+            color: var(--gris-texto);
+            text-decoration: line-through;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+
+        .btn-oferta {
+            background-color: var(--naranja-neon);
+            color: var(--azul-oscuro);
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-oferta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 157, 0, 0.5);
+        }
+
+        .contenedor-seccion {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--blanco);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grilla {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .card {
+            background-color: var(--azul-oscuro);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            border-radius: 15px;
+            padding: 40px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--cian-neon);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2);
+        }
+
+        .icono {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* ESTILO DEL LOGO DEL LLAVERO DIGITAL */
+        .logo-llavero {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.3));
+        }
+
+        .card h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.5rem;
+            color: var(--cian-neon);
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: var(--gris-texto);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .btn-consulta {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: var(--cian-neon);
+            border: 2px solid var(--cian-neon);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-consulta:hover {
+            background: var(--cian-neon);
+            color: var(--azul-oscuro);
+        }
+
+        .bg-servicios {
+            background-color: #071224;
+            border-top: 1px solid rgba(0, 242, 255, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: var(--azul-fondo);
+        }
+
+        .contacto-footer {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .link-footer {
+            color: var(--cian-neon);
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .link-footer:hover {
+            color: var(--blanco);
+            transform: translateY(-3px);
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+        }
+
+        .copyright {
+            color: var(--gris-texto);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(168, 178, 193, 0.1);
+            padding-top: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .grilla {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                padding-bottom: 20px;
+                justify-content: flex-start;
+            }
+            .card {
+                flex: 0 0 85%;
+                scroll-snap-align: center;
+            }
+            .grilla::-webkit-scrollbar {
+                display: none;
+            }
+            .grilla {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .contacto-footer {
+                gap: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <img src="logo.png" alt="Logo G.Tec Servicios" class="logo-principal">
+        <h1>Tecnología de punta<br>con respaldo real.</h1>
+        <p>
+            <span class="texto-destacado">Somos una empresa de Tecnología con más de 35 años en el rubro informático.</span>
+            En <strong>G.Tec Servicios</strong> combinamos hardware de alta gama con soluciones técnicas a medida.
+        </p>
+        
+        <div class="botones-group">
+            <a href="https://wa.me/5491165446459?text=Hola%20G.Tec,%20necesito%20asesoramiento" class="btn-whatsapp-principal">Consultar por WhatsApp</a>
+            <a href="catalogo.pdf" target="_blank" class="btn-catalogo">Descargar Catálogo PDF</a>
+        </div>
+    </section>
+
+    <!-- OFERTA SEMANAL -->
+    <section class="seccion-oferta">
+        <div class="card-oferta">
+            <div class="badge-oferta">🔥 OFERTA DE LA SEMANA</div>
+            <h3>Notebook Lenovo ThinkPad X1</h3>
+            <p>El equipo definitivo para profesionales. Intel Core i7, 16GB RAM, 512GB SSD. Lista para exigencia extrema.</p>
+            <div class="precio-oferta">
+                <span>$1.200.000</span> $950.000
+            </div>
+            <a href="https://wa.me/5491165446459?text=Hola,%20quiero%20aprovechar%20la%20Oferta%20Semanal" class="btn-oferta">¡Reservar Ahora!</a>
+        </div>
+    </section>
+
+    <!-- HARDWARE -->
+    <section class="contenedor-seccion">
+        <h2 class="titulo-seccion">Hardware Destacado</h2>
+        <div class="grilla">
+            <div class="card">
+                <span class="icono">💻</span>
+                <h3>Notebooks</h3>
+                <p>Equipos de alto rendimiento seleccionados para diseño, gestión y trabajo pesado.</p>
+                <a href="https://wa.me/5491165446459?text=Hola,%20me%20interesan%20las%20Notebooks" class="btn-consulta">Ver Modelos</a>
+            </div>
+            <div class="card">
+                <span class="icono">🖥️</span>
+                <h3>Mini PCs</h3>
+                <p>Potencia extrema en formato ultra reducido para oficinas y setups modernos.</p>
+                <a href="https://wa.me/5491165446459?text=Hola,%20me%20interesan%20las%20Mini%20PCs" class="btn-consulta">Ver Modelos</a>
+            </div>
+            <div class="card">
+                <span class="icono">⚡</span>
+                <h3>Discos Sólidos</h3>
+                <p>Unidades SSD de última generación para llevar la velocidad de tus equipos al máximo.</p>
+                <a href="https://wa.me/5491165446459?text=Hola,%20me%20interesan%20los%20Discos%20Solidos" class="btn-consulta">Consultar Stock</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUCIONES Y SOFTWARE -->
+    <section class="bg-servicios">
+        <div class="contenedor-seccion">
+            <h2 class="titulo-seccion">Soluciones y Software</h2>
+            <div class="grilla">
+                <!-- LLAVERO DIGITAL -->
+                <div class="card">
+                    <img src="image_9.png" alt="Logo Llavero Digital" class="logo-llavero">
+                    <h3>Llavero Digital</h3>
+                    <p>Mi aplicación propia para gestionar tus accesos y contraseñas de forma simple y segura en Android.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.gtecservicios.llaverodigital" target="_blank" class="btn-consulta">Ver en Play Store</a>
+                </div>
+                
+                <!-- NUEVO: SISTEMA DE VENTAS -->
+                <div class="card">
+                    <span class="icono">📊</span>
+                    <h3>Sistema de Ventas</h3>
+                    <p>Acceso exclusivo para clientes. Consultá stock y precios actualizados en tiempo real.</p>
+		    <a href="https://www.gitextranet.com.ar/login?login=1&user_name=GTECSERVICIOS_P&password=Usu4r1@" target="_blank" class="btn-consulta">Ingresar al Sistema</a>
+                    
+                </div>
+
+                <!-- OTRAS SOLUCIONES -->
+                <div class="card">
+                    <span class="icono">📡</span>
+                    <h3>Conectividad Rural</h3>
+                    <p>Instalación de antenas, Starlink y enlaces punto a punto para establecimientos agropecuarios.</p>
+                    <a href="https://wa.me/5491165446459?text=Hola,%20necesito%20info%20sobre%20Conectividad%20Rural" class="btn-consulta">Consultar</a>
+                </div>
+                <div class="card">
+                    <span class="icono">🌐</span>
+                    <h3>Redes y Wi-Fi</h3>
+                    <p>Configuración de redes profesionales (Cisco CCNA), Wi-Fi de alta cobertura y seguridad.</p>
+                    <a href="https://wa.me/5491165446459?text=Hola,%20necesito%20armar%20una%20red%20de%20datos" class="btn-consulta">Consultar</a>
+                </div>
+                <div class="card">
+                    <span class="icono">🚜</span>
+                    <h3>Soporte para el Agro</h3>
+                    <p>Asesoramiento integral en digitalización de procesos para empresas del sector productivo.</p>
+                    <a href="https://wa.me/5491165446459?text=Hola,%20busco%20asesoramiento%20para%20mi%20empresa" class="btn-consulta">Consultar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="contacto-footer">
+            <a href="mailto:gtecservicios@gmail.com" class="link-footer">
+                <span style="font-size: 1.5rem;">✉️</span> gtecservicios@gmail.com
+            </a>
+            <a href="https://www.instagram.com/g.tec.servicios/" target="_blank" class="link-footer">
+                <span style="font-size: 1.5rem;">📷</span> @g.tec.servicios
+            </a>
+        </div>
+        <div class="copyright">
+            &copy; 2026 G.Tec Servicios - Santa Fe, Argentina.
+        </div>
+    </footer>
+
+</body>
+</html>
